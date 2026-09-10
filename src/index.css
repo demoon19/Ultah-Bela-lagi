@@ -1,0 +1,58 @@
+@import "tailwindcss";
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: #fce7f3; /* soft pink background as fallback */
+  overflow: hidden; /* Prevent scrolling for the single page app experience */
+}
+
+/* Custom Animations */
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  25% { transform: translateX(-8px); }
+  50% { transform: translateX(8px); }
+  75% { transform: translateX(-8px); }
+}
+
+.animate-shake {
+  animation: shake 0.4s ease-in-out;
+}
+
+@keyframes heartbeat {
+  0% { transform: scale(1); }
+  14% { transform: scale(1.3); }
+  28% { transform: scale(1); }
+  42% { transform: scale(1.3); }
+  70% { transform: scale(1); }
+}
+
+.animate-heartbeat {
+  animation: heartbeat 1.5s infinite;
+}
+
+@keyframes flicker {
+  0%, 100% { transform: scaleY(1) scaleX(1) translateX(0); opacity: 0.9; }
+  25% { transform: scaleY(1.1) scaleX(0.9) translateX(-1px); opacity: 1; }
+  50% { transform: scaleY(0.95) scaleX(1.05) translateX(1px); opacity: 0.8; }
+  75% { transform: scaleY(1.05) scaleX(0.95) translateX(-0.5px); opacity: 0.9; }
+}
+
+.animate-flicker {
+  animation: flicker 0.5s infinite alternate ease-in-out;
+  transform-origin: bottom center;
+}
+
+.bg-candle-stripe {
+  background: repeating-linear-gradient(
+    -45deg,
+    #ffecd6,
+    #ffecd6 5px,
+    #e8a99e 5px,
+    #e8a99e 10px
+  );
+}
